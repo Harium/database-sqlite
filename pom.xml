@@ -53,6 +53,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <developers>
+        <developer>
+            <id>yuripourre</id>
+            <name>Yuri Pourre</name>
+            <email>yuripourre@gmail.com</email>
+        </developer>
+    </developers>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
