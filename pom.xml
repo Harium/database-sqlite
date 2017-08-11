@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.harium.database</groupId>
     <artifactId>sqlite</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>Harium Database SQLite</name>
     <description>SQLite module to Harium Database</description>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.harium.database</groupId>
             <artifactId>core</artifactId>
-            <version>1.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.j256.ormlite</groupId>
