@@ -6,16 +6,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DatabaseSQLiteModuleTest {
+public class SQLiteDatabaseModuleTest {
 
     private OrmLiteBaseDAOImpl<Pojo> dao;
-    private DatabaseSQLiteModule module;
+    private SQLiteDatabaseModule module;
 
     @Before
     public void setUp() {
         dao = new OrmLiteBaseDAOImpl<Pojo>(Pojo.class);
 
-        module = new DatabaseSQLiteModule("database.sqlite");
+        module = new SQLiteDatabaseModule("database.sqlite");
         module.register(dao);
         module.init(true);
     }
