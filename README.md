@@ -33,6 +33,7 @@ public class Main {
 
         Pojo pojo = new Pojo();
         pojo.setText("1");
+        dao.create(pojo);
 
         Pojo created = dao.queryForId(1);
         System.out.println(created.getText());
