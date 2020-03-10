@@ -80,6 +80,10 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <optimize>true</optimize>
+                    <compilerArgument>-parameters</compilerArgument>
+                    <excludes>
+                        <exclude>**/examples/*</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
