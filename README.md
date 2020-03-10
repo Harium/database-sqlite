@@ -1,14 +1,7 @@
 # database-sqlite
 SQLite module to Harium Database
 
-### Maven
-```
-<dependency>
-  <groupId>com.harium.database</groupId>
-  <artifactId>sqlite</artifactId>
-  <version>1.0.6</version>
-</dependency>
-```
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.harium.database/sqlite/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.harium.database/sqlite/)
 
 ## Example
 
@@ -21,20 +14,17 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Main {
 
     public static void main(String[] args) {
-        OrmLiteBaseDAOImpl<Pojo> dao;
-        SQLiteDatabaseModule module;
-
-        dao = new OrmLiteBaseDAOImpl<Pojo>(Pojo.class);
-
-        module = new SQLiteDatabaseModule("database.sqlite");
+        SQLiteDatabaseModule module = new SQLiteDatabaseModule("database.sqlite");
+        
+        OrmLiteBaseDAOImpl<Pojo> dao = new OrmLiteBaseDAOImpl<Pojo>(Pojo.class);
         module.register(dao);
         boolean clearDatabase = true;
         module.init(clearDatabase);
-
+        
         Pojo pojo = new Pojo();
-        pojo.setText("1");
+        pojo.setText("Text 1");
         dao.create(pojo);
-
+        
         Pojo created = dao.queryForId(1);
         System.out.println(created.getText());
     }
