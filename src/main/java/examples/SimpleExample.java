@@ -1,6 +1,6 @@
 package examples;
 
-import com.harium.database.dao.OrmLiteBaseDAOImpl;
+import com.harium.database.dao.OrmLiteBaseDAOIntegerImpl;
 import com.harium.database.sqlite.module.SQLiteDatabaseModule;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -8,9 +8,9 @@ import com.j256.ormlite.table.DatabaseTable;
 public class SimpleExample {
 
   public static void main(String[] args) {
-    SQLiteDatabaseModule module = new SQLiteDatabaseModule("database.sqlite");
+    SQLiteDatabaseModule<Integer> module = new SQLiteDatabaseModule("database.sqlite");
 
-    OrmLiteBaseDAOImpl<Pojo> dao = new OrmLiteBaseDAOImpl<Pojo>(Pojo.class);
+    OrmLiteBaseDAOIntegerImpl<Pojo> dao = new OrmLiteBaseDAOIntegerImpl<Pojo>(Pojo.class);
     module.register(dao);
     boolean clearDatabase = true;
     module.init(clearDatabase);

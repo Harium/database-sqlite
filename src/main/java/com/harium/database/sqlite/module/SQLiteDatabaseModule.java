@@ -6,7 +6,7 @@ import com.j256.ormlite.support.ConnectionSource;
 
 import java.sql.SQLException;
 
-public class SQLiteDatabaseModule extends OrmLiteDatabaseModule {
+public class SQLiteDatabaseModule<ID> extends OrmLiteDatabaseModule<ID> {
 
     private static final String SQLITE_PREFIX = "jdbc:sqlite:";
     private final String DATABASE_NAME;

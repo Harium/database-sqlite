@@ -10,16 +10,16 @@ public class AdvancedExample {
 
     public static void main(String[] args) {
 
-        SQLiteDatabaseModule module = new SQLiteDatabaseModule("database.sqlite");
+        SQLiteDatabaseModule<Long> module = new SQLiteDatabaseModule("database.sqlite");
 
         Table<Pojo> table = new Table(Pojo.class);
-        table.createColumn("id").idAutoIncrement();
+        table.createColumn("id").id().typeLong();
         table.createColumn("text");
         table.register(module);
 
         module.init(true);
 
-        OrmLiteBaseDAOImpl<Pojo> dao = (OrmLiteBaseDAOImpl<Pojo>) table.getDAO(Pojo.class);
+        OrmLiteBaseDAOImpl<Pojo, Long> dao = (OrmLiteBaseDAOImpl<Pojo, Long>) table.getDAO(Pojo.class);
 
         Pojo pojo = new Pojo();
         pojo.setText("My Text");
@@ -30,14 +30,14 @@ public class AdvancedExample {
     }
 
     static class Pojo {
-        int id;
+        long id;
         String text;
 
-        public int getId() {
+        public Long getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(Long id) {
             this.id = id;
         }
 
