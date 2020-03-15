@@ -3,6 +3,7 @@ package com.harium.database.sqlite.module;
 import com.harium.database.Pojo;
 import com.harium.database.dao.OrmLiteBaseDAOImpl;
 import com.harium.database.dao.OrmLiteBaseDAOIntegerImpl;
+import com.harium.database.module.OrmLiteDatabaseModule;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +15,7 @@ public class SQLiteDatabaseModuleTest {
 
     @Before
     public void setUp() {
+        OrmLiteDatabaseModule.disableLogs();
         dao = new OrmLiteBaseDAOIntegerImpl<Pojo>(Pojo.class);
 
         module = new SQLiteDatabaseModule("database.sqlite");
